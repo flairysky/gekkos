@@ -204,7 +204,7 @@ button { cursor: pointer; }
   opacity: 0; animation: fadeUp 0.8s 0.9s ease forwards;
 }
 .hero-scroll {
-  position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+  position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%);
   z-index: 4; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
   color: var(--gray); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
   opacity: 0; animation: fadeIn 1s 1.8s ease forwards;
@@ -791,12 +791,9 @@ textarea.form-control { min-height: 110px; resize: vertical; }
   .cal-row > *:nth-child(4) { display: none; }
 }
 @media (max-width: 1100px) {
-  .nav-links { display: none; }
+  .nav-links:not(.open) { display: none; }
   .nav-toggle { display: flex; }
-}
-@media (max-width: 768px) {
-  :root { --nav-h: 60px; }
-  .nav { background: #080f0a; backdrop-filter: none; }
+  .nav:has(.nav-links.open) { backdrop-filter: none; background: #080f0a; }
   .nav-links.open {
     display: flex; flex-direction: column;
     position: fixed; top: 0; left: 0; right: 0; bottom: 0;
@@ -840,6 +837,10 @@ textarea.form-control { min-height: 110px; resize: vertical; }
     font-size: 0.8rem; letter-spacing: 0.08em;
     color: var(--gold-light); font-style: italic;
   }
+}
+@media (max-width: 768px) {
+  :root { --nav-h: 60px; }
+  .nav { background: #080f0a; backdrop-filter: none; }
   .news-grid   { grid-template-columns: 1fr; }
   .trophies-grid { grid-template-columns: 1fr 1fr; }
   .players-grid  { grid-template-columns: repeat(2, 1fr); }
