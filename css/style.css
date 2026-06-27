@@ -100,6 +100,7 @@ button { cursor: pointer; }
 }
 .nav-cta:hover { background: var(--green-light); border-color: var(--green-light); }
 
+.nav-mobile-header { display: none; }
 .nav-toggle {
   display: none; flex-direction: column; gap: 5px; margin-left: auto; padding: 4px;
   background: none; border: none;
