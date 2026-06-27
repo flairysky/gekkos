@@ -15,18 +15,19 @@
   }
 
   if (toggle && links) {
+    const closeMenu = () => {
+      links.classList.remove('open');
+      toggle.classList.remove('open');
+      document.body.style.overflow = '';
+    };
     toggle.addEventListener('click', () => {
       const open = links.classList.toggle('open');
       toggle.classList.toggle('open', open);
       document.body.style.overflow = open ? 'hidden' : '';
     });
-    links.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        links.classList.remove('open');
-        toggle.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    });
+    const closeBtn = links.querySelector('.nav-close');
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
   }
 
   /* Active link */

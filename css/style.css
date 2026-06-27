@@ -791,17 +791,51 @@ textarea.form-control { min-height: 110px; resize: vertical; }
 }
 @media (max-width: 768px) {
   :root { --nav-h: 60px; }
+  .nav { background: #080f0a; backdrop-filter: none; }
   .nav-links { display: none; }
   .nav-links.open {
     display: flex; flex-direction: column;
     position: fixed; top: 0; left: 0; right: 0; bottom: 0;
     background: #080f0a;
-    padding: calc(var(--nav-h) + 1.5rem) 2rem 2rem;
+    padding: 2rem 2rem 2rem;
     align-items: flex-start; gap: 0.5rem;
-    z-index: 9999;
+    z-index: 10001;
+    overflow-y: auto;
   }
   .nav-links.open .nav-link { font-size: 1.6rem; padding: 0.6rem 0; }
   .nav-links.open .nav-cta  { font-size: 1.6rem; padding: 0.6rem 0; background: none; border: none; color: var(--gold-light); }
+
+  /* Mobile menu header */
+  .nav-mobile-header {
+    list-style: none;
+    width: 100%;
+    display: flex; flex-direction: column;
+    padding-bottom: 1.25rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+  }
+  .nav-close {
+    position: absolute; top: 0; right: 0;
+    background: none; border: none; cursor: pointer;
+    color: var(--white); font-size: 1.8rem; line-height: 1;
+    padding: 0.1rem 0.3rem;
+  }
+  .nav-mobile-brand {
+    display: flex; align-items: center; gap: 0.75rem;
+    text-decoration: none; margin-top: 0.25rem;
+  }
+  .nav-mobile-brand img { height: 52px; width: auto; }
+  .nav-mobile-brand-text {
+    font-family: var(--font-h); font-size: 1.35rem;
+    color: var(--white); letter-spacing: 0.06em;
+  }
+  .nav-mobile-brand-text span { color: var(--gold-light); }
+  .nav-mobile-slogan {
+    margin-top: 0.5rem;
+    font-size: 0.8rem; letter-spacing: 0.08em;
+    color: var(--gold-light); font-style: italic;
+  }
   .nav-toggle { display: flex; }
   .news-grid   { grid-template-columns: 1fr; }
   .trophies-grid { grid-template-columns: 1fr 1fr; }
