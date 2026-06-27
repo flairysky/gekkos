@@ -790,10 +790,13 @@ textarea.form-control { min-height: 110px; resize: vertical; }
   .cal-header > *:nth-child(4),
   .cal-row > *:nth-child(4) { display: none; }
 }
+@media (max-width: 1100px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+}
 @media (max-width: 768px) {
   :root { --nav-h: 60px; }
   .nav { background: #080f0a; backdrop-filter: none; }
-  .nav-links { display: none; }
   .nav-links.open {
     display: flex; flex-direction: column;
     position: fixed; top: 0; left: 0; right: 0; bottom: 0;
@@ -837,7 +840,6 @@ textarea.form-control { min-height: 110px; resize: vertical; }
     font-size: 0.8rem; letter-spacing: 0.08em;
     color: var(--gold-light); font-style: italic;
   }
-  .nav-toggle { display: flex; }
   .news-grid   { grid-template-columns: 1fr; }
   .trophies-grid { grid-template-columns: 1fr 1fr; }
   .players-grid  { grid-template-columns: repeat(2, 1fr); }
