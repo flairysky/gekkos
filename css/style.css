@@ -54,7 +54,7 @@ button { cursor: pointer; }
 
 /* ---- Navigation ---- */
 .nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 10000;
   height: var(--nav-h);
   display: flex; align-items: center;
   padding: 0 2rem;
@@ -794,10 +794,11 @@ textarea.form-control { min-height: 110px; resize: vertical; }
   .nav-links { display: none; }
   .nav-links.open {
     display: flex; flex-direction: column;
-    position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0;
-    background: rgba(8,15,10,0.99);
-    padding: 2rem; align-items: flex-start; gap: 0.5rem;
-    z-index: 998;
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: #080f0a;
+    padding: calc(var(--nav-h) + 1.5rem) 2rem 2rem;
+    align-items: flex-start; gap: 0.5rem;
+    z-index: 9999;
   }
   .nav-links.open .nav-link { font-size: 1.6rem; padding: 0.6rem 0; }
   .nav-links.open .nav-cta  { font-size: 1.6rem; padding: 0.6rem 0; background: none; border: none; color: var(--gold-light); }
