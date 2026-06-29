@@ -534,6 +534,56 @@ button { cursor: pointer; }
   font-size: 0.78rem; color: var(--gray); font-style: italic; line-height: 1.45;
 }
 
+/* ---- Season Picker ---- */
+.season-picker {
+  display: flex; align-items: center; gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.season-picker-label {
+  font-family: var(--font-h); font-size: 0.7rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gray); margin-right: 0.25rem;
+}
+.season-btn {
+  font-family: var(--font-h); font-size: 0.8rem; font-weight: 500;
+  letter-spacing: 0.08em; padding: 0.35rem 0.9rem; border-radius: 6px;
+  border: 1px solid var(--border); background: transparent; color: var(--gray-light);
+  cursor: pointer; transition: all var(--t);
+}
+.season-btn:hover { border-color: var(--green); color: var(--white); }
+.season-btn.active { background: var(--bg-card); border-color: var(--green); color: var(--white); }
+
+/* ---- Stats Table ---- */
+.stats-table-wrap { overflow-x: auto; margin-bottom: 0.5rem; border-radius: 12px; border: 1px solid var(--border); }
+.stats-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.stats-table thead tr { background: var(--bg-card); }
+.stats-table th {
+  font-family: var(--font-h); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--gray); padding: 0.7rem 1rem; border-bottom: 1px solid var(--border);
+  text-align: left; white-space: nowrap; user-select: none;
+}
+.stats-table th.st-sortable { cursor: pointer; transition: color var(--t); }
+.stats-table th.st-sortable:hover { color: var(--white); }
+.stats-table th.st-active { color: var(--gold-light); }
+.stats-table td { padding: 0.6rem 1rem; border-bottom: 1px solid var(--border); color: var(--gray-light); white-space: nowrap; }
+.stats-table tbody tr:last-child td { border-bottom: none; }
+.stats-table tbody tr:hover td { background: rgba(255,255,255,0.03); }
+.stats-table td.st-pts  { color: var(--gold-light); font-weight: 700; font-family: var(--font-h); }
+.stats-table td.st-gray { color: var(--gray); }
+.stats-table td.st-name { color: var(--white); font-weight: 600; }
+.tab-btn--alumni { border-color: rgba(240,195,48,0.25) !important; }
+.tab-btn--alumni:hover, .tab-btn--alumni.active { background: rgba(240,195,48,0.15) !important; border-color: var(--gold-light) !important; color: var(--gold-light) !important; }
+.tab-btn--stats { border-color: rgba(29,122,58,0.35) !important; }
+
+/* ---- Notable Alumni ---- */
+.alumni-link {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.72rem; font-family: var(--font-h); letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0.4rem 0.8rem; border-radius: 6px;
+  border: 1px solid var(--border); color: var(--gray-light); text-decoration: none;
+  transition: all var(--t);
+}
+.alumni-link:hover { border-color: var(--green); color: var(--white); }
+
 /* ---- Trophies ---- */
 .trophies-grid {
   display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;
