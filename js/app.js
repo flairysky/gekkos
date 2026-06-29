@@ -332,10 +332,12 @@ if (document.body.classList.contains('page-home')) {
   }
 
   /* ─── Panel visibility ─── */
+  const alumniSectionPermanent = document.getElementById('alumni-section-permanent');
   function showPanel(name) {
     if (gridPanel)   gridPanel.style.display   = name === 'grid'   ? '' : 'none';
     if (statsPanel)  statsPanel.style.display  = name === 'stats'  ? '' : 'none';
     if (alumniPanel) alumniPanel.style.display = name === 'alumni' ? '' : 'none';
+    if (alumniSectionPermanent) alumniSectionPermanent.style.display = name === 'alumni' ? 'none' : '';
   }
 
   /* ─── Tab clicks ─── */
